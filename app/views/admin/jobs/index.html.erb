@@ -29,6 +29,7 @@
         </tr>
     </thead>
 
+
     <% @jobs.each do |job| %>
     <tr>
 
@@ -59,3 +60,7 @@
     </tr>
     <% end %>
 </table>
+
+        <div class="text-center col-md-12 pagination">
+          <%= will_paginate @jobs, renderer: BootstrapPagination::Rails %>
+        </div>

@@ -22,6 +22,8 @@ before_filter :authenticate_user!, only: [:new, :create, :update, :edit, :destro
             else
               Job.published.recent
             end
+            @jobs = Job.all
+    @jobs = @jobs.paginate(:page => params[:page], :per_page => 10)
   end
 
   def new
